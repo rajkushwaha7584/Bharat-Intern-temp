@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="shortcut icon" href="img.avif" type="image/x-icon">
+  <style>
+    body {
+      background-color: rgb(219, 239, 239);
+      text-align: center;
+      margin-top: 15%;
+      margin-bottom: auto;
+      margin-left: 15%;
+      margin-right: 15%;
+      background: url('temp.jpeg');
+    }
+
+    .temp {
+      background-color: rgb(150, 150, 233);
+    }
+
+    #color {
+      background-color: rgb(223, 153, 167);
+    }
+    .img{
+    border:double red 5px;
+    }
+  </style>
+</head>
+<body>
+  <fieldset id="color">
+    <a href="https://www.google.com/search?q=temperature+india+live&oq=temperature+india+live&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIKCAcQABiGAxiKBTIKCAgQABiGAxiKBTIKCAkQABiGAxiKBdIBCTE5NjkwajFqN6gCALACAA&sourceid=chrome&ie=UTF-8">
+        <img class="img" src="img.png" alt="image" height="60" width="200">
+    </a>
+    <legend>
+      <h2>Temperature Converter</h2>
+    </legend>
+    <main class="temp">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>
+              Type a value in the Fahrenheit field to convert the value to Celsius:
+            </p>
+            
+            <p>
+              <label for="inputFahrenheit">Fahrenheit</label>
+              <input type="number" class="form-control" id="inputFahrenheit" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+            </p>
+            <p>
+              Celsius: <span id="outputCelcius"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </fieldset>
+
+  <script>
+    function temperatureConverter(fahrenheitValue) {
+      const celsiusValue = (fahrenheitValue - 32) / 1.8;
+
+      // Update the output Celsius value
+      document.getElementById("outputCelcius").innerHTML = celsiusValue.toFixed(2);
+    }
+  </script>
+</body>
+</html>
